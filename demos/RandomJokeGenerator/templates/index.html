@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://unpkg.com/blocks.css/dist/blocks.min.css" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<title>Kanye Quotes</title>
+	<style>
+		.rainbow-gradient {
+			background: linear-gradient(124deg,
+			#ff2400,
+			#e81d1d,
+			#d6a811,
+			#ced114,
+			#1de840,
+			#1ddde8,
+			#2b1de8,
+			#dd00f3,
+			#dd00f3);
+			background-size: 1800% 1800%;
+			animation: rainbow-gradient 18s ease infinite;
+		}
+
+		@keyframes rainbow-gradient {
+			0% {
+				background-position: 0% 82%;
+			}
+			50% {
+				background-position: 100% 19%;
+			}
+			100% {
+				background-position: 0% 82%;
+			}
+		}
+	</style>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-4ZPLezkTZTsojWFhpdFembdzFudphhoOzIunR1wH6g1WQDzCAiPvDyitaK67mp0+" crossorigin="anonymous">
+</head>
+
+<body class="rainbow-gradient">
+	<h1> Random joke generator </h1>
+	<div class="quote block">
+		<h3> {{ quote }} </h3>
+	</div>
+	<a href="{{ url_for('index') }}" class="block refresh">Refresh</a>
+</body>
+
+</html>
